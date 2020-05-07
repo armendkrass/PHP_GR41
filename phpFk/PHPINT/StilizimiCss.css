@@ -1,0 +1,329 @@
+body
+{
+	background-color:#3d585c;
+}
+
+
+}
+
+nav#menu
+{
+	
+	font-size: 12pt;
+}
+
+
+h1
+{
+	font-size: 36pt;
+	margin-right: 403px;
+	margin-left: 20px;
+	color: white;
+	font-family: Georgia;
+}
+
+
+span#inline
+{
+	margin-right: 14.85em;
+	padding:50px 0 50px 0;
+	display: inline-block;
+}
+
+input#searchbox
+{
+	padding:10px 180px 10px 0;
+	background-color:#304649;
+	border:1px solid #363636;
+	margin-right: 0;
+	font-family: georgia;
+
+}
+::placeholder
+{
+	color:white;
+}
+::webkit-input-placeholder{
+	color:white;}
+	:-ms-input-placeholder
+	{
+		color:white;
+	}
+button#buttoni
+{
+	padding:10px 8px 10px 8px;
+	background-color: #3e3e3e;
+	border:1px solid #363636;
+	color: white;
+	font-family: georgia;
+
+}
+figure#uni1
+{
+	padding-bottom: 0;
+	margin: 0 20px 0 20px;
+	margin-bottom: 0;
+}
+img#img
+{
+	margin: 0;
+}
+section#foto4
+{
+	display: flex;
+	background-color: white;
+	margin: 0 20px 0 20px;
+
+}
+.table4foto
+{
+
+	display: flex;
+	border-collapse: collapse;
+	margin-left: 140px;
+
+
+}
+.fotoborder
+{
+ border:1px solid ;
+ border-color: #e2e2e2;
+ padding: 6px;
+}
+section#lajmet
+{
+	background-color: white;
+	margin:0 20px 0 20px;
+}
+section#Secfund
+{
+	background-color: #f2f2f2;
+	margin: 0 20px 0 20px;
+	
+
+}
+footer
+{
+	background-color: #1f1f1f;
+	margin:0 20px 0 20px;
+	padding-top:25px;
+	padding-bottom: 25px;
+	color: #727272;
+
+}
+.figc
+{
+	text-align: center;
+	color: #660000;
+}
+.title4
+{
+	color:#666666;
+}
+.h4text
+{
+	color:#660000;
+}
+#menubar
+{
+
+	background: #2e2e2e;
+	text-align: left;
+	margin-left: 20px;
+	margin-right: 20px;
+
+
+}
+#menubar ul 
+{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+	font-family: georgia;
+	font-size:12pt;
+	text-transform: uppercase;
+
+}
+#menubar ul li
+{
+	width: 150px;
+	margin: 10px;
+	padding: 10px;
+
+
+}
+#menubar ul li a
+{
+	text-decoration: none;
+	color: #fff;
+
+}
+.active,#menubar ul li:hover
+{
+	background: #00d2ff;
+	border-radius: 3px;
+
+}
+.sub-menu-1
+{
+	display: none;
+}
+#menubar ul li:hover .sub-menu-1
+{
+	display: block;
+	position: absolute;
+	background: #2e2e2e;
+	margin-top: 10px;
+	margin-left: -10px;
+}
+#menubar ul li:hover .sub-menu-1 ul
+{
+	display: block;
+	margin: 10px;
+
+}
+.linkat
+{ text-decoration: none;
+color: #660000;
+}
+.linkat:hover
+{
+	color: #00d2ff;
+}
+.wrapper
+{
+	font-family: sans-serif;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.content
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	text-transform: uppercase;
+	font-size: 25px;
+    color:#fff;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+        color:black;
+
+}
+.content a
+{
+	
+	text-decoration: none;
+	font-size: 14px;
+	display: block;
+	background-color: #00d2ff;
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+	font-style: bold;
+	border: solid black 2px;
+	font-weight: bold;
+	color: white;
+	border-radius: 15px;
+	border-color: #4e6f73;
+
+
+	}
+.overlay
+{
+	opacity: 0;
+
+}
+.wrapper:hover img
+{
+	background-color:#3d585c;
+	opacity: 0.5;
+}
+.wrapper:hover .overlay
+{
+	opacity: 1;
+}
+
+.hyrje
+{
+	display: block;
+	position: relative;
+	animation: text 1.5s 1;
+	letter-spacing: 1px;
+}
+
+@keyframes text{
+	0%{
+		color: #00d2ff;
+		
+	}
+	30%{
+	color: #00d2ff;
+		letter-spacing: 3px;
+	
+	}
+	80%
+	{
+		color: #00d2ff;
+		letter-spacing: 2.5px;
+		
+	}
+	
+
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  /*z indeks me kon elemnti ne krye indeksi ma i lart */
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #343434 ;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 100px;
+   border: 3px solid ;
+  border-color:#00d2ff ;
+}
+
+#myBtn:hover {
+  background-color: #00d2ff;
+}
+
+
+ul li{
+    list-style-type: none;
+}
+
+#right-navheader {
+    float: right;
+}
+
+#right-navheader li {
+    display: inline-block;
+    margin: 10px;
+}
+.top{
+	
+	background-color:black;
+	border-bottom:30px solid black;
+	padding: 5px;
+}
+.top div{
+	color:grey;
+	background-color:black;
+	padding:10px;
+
+	
+}
+
+
