@@ -1,3 +1,33 @@
+<?php
+
+session_start();
+if (isset($_SESSION['email']))
+$_SESSION['msg']="duhesh me login qe te shkosh ne kete page";
+header("location:logini.php");
+
+
+
+
+if (isset($_GET['logout'])){
+  session_destroy();
+  unset($_SESSION['email']);
+  header("location:login.php");
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,15 +63,16 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 };
 
-<?php include('C:\xampp\htdocs\INT19_20_GR13-master\includes\header.php')?>
+
 
 
 </script>
 	<header>
 		<div class="top" style="font-size:17px;color: white;margin-right: 15px;margin-left: 15px;">
 			 <ul id="right-navheader">
-               <li><a>Sign Up</a></li>
-               <li><a>Login</a></li>
+
+               <li><a href="signup.php">Sign Up</a></li>
+               <li><a href="logini.php">Login</a></li>
                 </ul>
             </div>
     <div>
@@ -213,7 +244,7 @@ function topFunction() {
     </section>
     <hr color="#e2e2e2" size="2" style="margin: 0 20px 0 20px">
 
-    <section id="Secfund" style="margin: 0 20px 0 20px 0;padding-top: 5px;">
+    <section id="Secfund" style="margin: 0 20px 0 20px ;padding-top: 5px;">
       <h4 style="margin-left: 15px;" class="title4" >Quickly Find What You Are Looking For</h4>
       <hr color="#e2e2e2" size="1" style="margin: 0 15px 0 15px;">
       <table  cellspacing="15px">

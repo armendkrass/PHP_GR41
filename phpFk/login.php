@@ -1,65 +1,31 @@
-<?php
-session_start();
-require "lajmrim.php";
-
-?>
-
-
-
-
-
-
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-	<script type="text/javascript">
-		function plotsimihapsirav(){
-			var em=document.getElementById('idja').value;
-			var pass=document.getElementById('pasi').value;
-
-			  if(em.length === 0 && pass.length !== 0){
-               alert('Shkruani emrin e Përdoruesit');
-               return;
-           }
-           else if(pass.length === 0 && em.length !==0 ){
-               alert('Shkruani Fjalëkalimin');
-               return;
-           }
-           else if(pass.length === 0 && em.length ===0){
-              alert('Plotësoni të dhënat që kërkohen');
-               return;
-           }
-       }
-		
-	</script>
+    <title>Registration system PHP and MySQL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
-<div class="katrori">
-	<img src="foto/useri.png" class="useri">
-	<h1>Hyrja</h1>
-	<form  action="login.php" method ="post" >
-		<p>Përdoruesi</p>
-		<input type="text" name="username" required="" id="idja" placeholder="Shkruaj Përdoruesin" class="form-control">
-		<p>Fjalëkalimi</p>
-		<input type="password" name="password" required="" id="pasi" placeholder="Shkruaj Fjalëkalimin" class="form-control">
-		
-		<button type="submit" name="loginsubmit"  onclick="plotsimihapsirav()">Kyqu</button>
-		<br>
-		<br>
-
-
-		<a href="signup.php">Keni harruar fjalëkalimin?</a>
-	</br>
-	</form>
-    <form action="logout.php" method ="post">
-    <button type="submit" name="logoutsubmit"  >logout</button>
-    </form>
-    <form action="signup.php" method ="post">
-    <button type="submit" name="signupsubmitL"  >signup</button>
-    </form>
+<div class="header">
+    <h2>Login</h2>
 </div>
-</body>
 
+<form method="post" action="login.php">
+    <?php include('errors.php'); ?>
+    <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" >
+    </div>
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password">
+    </div>
+    <div class="input-group">
+        <button type="submit" class="btn" name="login_user">Login</button>
+    </div>
+    <p>
+        Not yet a member? <a href="register.php">Sign up</a>
+    </p>
+</form>
+</body>
 </html>

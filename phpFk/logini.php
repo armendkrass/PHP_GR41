@@ -1,3 +1,8 @@
+<?php
+include ('server.php');
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,16 +14,13 @@
 			var pass=document.getElementById('pasi').value;
 
 			  if(em.length === 0 && pass.length !== 0){
-               alert('Shkruani emrin e Përdoruesit');
-               return;
+               alert('Shkruani emailin e Përdoruesit');
            }
            else if(pass.length === 0 && em.length !==0 ){
                alert('Shkruani Fjalëkalimin');
-               return;
            }
            else if(pass.length === 0 && em.length ===0){
               alert('Plotësoni të dhënat që kërkohen');
-               return;
            }
        }
 		
@@ -28,19 +30,21 @@
 <div class="katrori">
 	<img src="foto/useri.png" class="useri">
 	<h1>Hyrja</h1>
-	<form  action="home.html">
+	<form  action="logini.php" method="post">
 		<p>Përdoruesi</p>
-		<input type="text" name="P" required="" id="idja" placeholder="Shkruaj Përdoruesin">
+		<input type="email" name="loginemail" required="" id="em" placeholder="Shkruaj Email">
 		<p>Fjalëkalimi</p>
-		<input type="password" name="F" required="" id="pasi" placeholder="Shkruaj Fjalëkalimin">
+		<input type="password" name="loginpassword" required="" id="pasi" placeholder="Shkruaj Fjalëkalimin">
 		
-		<button type="submit"  onclick="plotsimihapsirav()">Kyqu</button>
+		<button type="submit" name="btnlogin" onclick="plotsimihapsirav()">Kyqu</button>
 		<br>
 		<br>
 
+        <a href="humbur.php">Keni harruar fjalëkalimin?</a>
+        <br>
+        <a href="signup.php">Nuk keni account?</a>
 
-		<a href="humbur.html?">Keni harruar fjalëkalimin?</a>
-	</br>
+        </br>
 	</form>
 </div>
 </body>
