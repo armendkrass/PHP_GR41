@@ -279,6 +279,6 @@ else
 			</div>
 		</br>
 		</br>
-		<?php include('C:\xampp\htdocs\INT19_20_GR13-master\includes\footer.php')?>
+		<?php include('includes\footer.php')?>
 	</div>
 </html>

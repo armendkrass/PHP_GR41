@@ -1,15 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['email']))
-$_SESSION['msg']="duhesh me login qe te shkosh ne kete page";
-header("location:logini.php");
-if (isset($_GET['logout'])){
-  session_destroy();
-  unset($_SESSION['email']);
-  header("location:login.php") ;
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,38 +37,7 @@ function topFunction() {
 
 
 </script>
-	<header>
-		<div class="top" style="font-size:17px;color: white;margin-right: 15px;margin-left: 15px;">
-			 <ul id="right-navheader">
-
-               <li><a href="signup.php">Sign Up</a></li>
-               <li><a href="logini.php">Login</a></li>
-                </ul>
-            </div>
-    <div>
-      <span id="inline" ><h1>OPEN UNIVERSITY</h1></span>
-    <span ><!----><input id="searchbox" type="text" name="search" placeholder=" Search Our Website..."><!----><button id="buttoni">SEARCH</button><!----></span></div>
-  
-<div  id="menubar">
-<ul>
-  <li  class="active"><a href="">Home</a></li>
-  
-  <li><a href="karriera.html" class="hyrje">Kariera</a></li>
-  <li><a href="kontakti.html" class="hyrje">Kontakti</a></li>
-   
-  
-  <li><a href="" class="hyrje">DropDown</a>
-<div class="sub-menu-1">
-  <ul>
-<li><a href="" class="hyrje">DropDown1</a></li>
-<li><a href="" class="hyrje">DropDown2</a></li>
-  </ul>
-</div>
-  </li>
-</ul>
-</div>
-
-   </header>
+<?php include('includes\header.php')?>
     <figure id="uni1">
     	<a href="universiteti.jpg" >
     <img src="foto/universiteti.jpg" alt="Fotografia e Objektit universitar" height="100%" width="100%"/>
@@ -296,7 +253,7 @@ function topFunction() {
       </table>
     </section>
     
-    <?php include('C:\xampp\htdocs\INT19_20_GR13-master\includes\footer.php')?>
+    <?php include('includes\footer.php')?>
 
 </body>
 </html>
