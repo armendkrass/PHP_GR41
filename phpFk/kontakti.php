@@ -298,7 +298,7 @@ Canvas nuk perkrahet nga browseri juaj.
 	</div>
 	
 </fieldset>
-<?php include('C:\xampp\htdocs\INT19_20_GR13-master\includes\footer.php')?>
+<?php include('includes\footer.php')?>
 
 
 </body>

@@ -97,6 +97,7 @@
 
 						<th>
 					<h2>Orari i Sesioneve per keshillim</h2>
+
 							<ul>
 									<li>
 										Si të përgatisim një CV të targetuar?</br>
@@ -115,6 +116,18 @@
 										Çdo të premte 10.00-12.00
 									</li>
 										</ul>
+
+                                        <ul>
+                                         <?php $data = "23 janar 2020,02:00,Shkelzen Gashi";
+                                        $koha=explode("," , $data);?>
+                                            <li><?php echo "Autor: ",$koha[2]?></li>
+                                            <li><?php echo "Data: ",$koha[0]?></li>
+                                            <li><?php echo "Ora: ",$koha[1]?></li>
+
+
+                                        </ul>
+
+
 						</th>
 					</tr>
 				</table>
@@ -187,6 +200,7 @@
 							<li>
 								Ofrimi i mbështetjes si dhe sesioneve individuale për përgatijen e CV-ve, Portfolios për aplikacionin e punës, trajnimi për teknikat e intervistimit;
 							</li>
+
 							
 							
 						</ul>
