@@ -1,32 +1,14 @@
 <?php
-
 session_start();
 if (isset($_SESSION['email']))
 $_SESSION['msg']="duhesh me login qe te shkosh ne kete page";
 header("location:logini.php");
-
-
-
-
 if (isset($_GET['logout'])){
   session_destroy();
   unset($_SESSION['email']);
   header("location:login.php");
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html>
