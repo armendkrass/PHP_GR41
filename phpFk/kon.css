@@ -145,13 +145,13 @@ background-color:  #3d585c;
   text-align: center;
   float:right;
   width:20%;
-  margin-top:8em;
-  margin-right: 23em;
+  margin-top:6em;
+  margin-right: 15em;
 
   color:hsl(0, 0%, 85%);
   background-color:#1f1f1f ;
   border-radius:10px;
-  font-size: 15px;
+  font-size: 20px;
   animation-name: rr;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
