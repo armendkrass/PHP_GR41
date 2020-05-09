@@ -230,42 +230,40 @@ function topFunction() {
 </div>
 </div>
 <div class="jv" id="qw">Kliko për të fshehur formularin! </div>
-<fieldset style="margin:none;" id="field">
-	<form id="forma" action="#" onsubmit="return kqyr()" >
+<fieldset  id="field">
+	<form id="forma" action="" name="form" method="post"  onsubmit="return kqyr()  " >
 		<div class="majt">
 			<h1>Na dërgoni një mesazh :</h1>
-			<label>Emri</label><br>
-			<input type="text" id="emri" placeholder="Shkruani emrin " autocomplete="off"><br>
-       <span id="mbushemrin"></span><br>
-			<label>Numri Tel.</label><br>
-			<input type="text" id="telefoni" placeholder="Shkruani numrin e telefonit" autocomplete="off"><br>
-			    <span id="mbushnumrin"></span><br>
-      <label>E-mail</label><br>
-			<input type="text" id="emaili" placeholder="Shkruani E-mailin" autocomplete="off"><br>
-      <span id="mbushemail"></span><br>
-			<label>Subjekti</label><br>
-			<input type="text" id="sb" placeholder="Shkruani subjektin" autocomplete="off"><br>
-      <span id="mbushsubjektin"></span><br>
-			<label>Mesazhi</label><br>
-			<textarea type="text" id="mess" rows="5" placeholder="Shkruani mesazhin" autocomplete="off"></textarea><br>
-      <span id="mbushmessazhin"></span><br>
-			<button type="submit" onclick="ruaj()" name="dergo">Dërgo</button>
-<canvas id="mycanvas" width="100" height="70" 
+			<label for="name">Emri</label><br>
+			<input type="text" id="emri" name="name" placeholder="Shkruani emrin " autocomplete="off"><br>
+            <span id="mbushemrin"></span><br>
+            <label for="subject">Tema</label><br>
+            <input type="text" id="tema" name="subject" placeholder="Shkruani emrin " autocomplete="off"><br>
+            <span id="mbushemrin"></span><br>
+
+            <label for="email">E-mail</label><br>
+			<input type="text" id="emaili" name="email" placeholder="Shkruani E-mailin" autocomplete="off"><br>
+            <span id="mbushemail"></span><br>
+            <label for="msg">Mesazhi</label><br>
+			<textarea type="text" id="mess" name="msg" rows="5" placeholder="Shkruani mesazhin" autocomplete="off"></textarea><br>
+            <span id="mbushmessazhin"></span><br>
+			<button type="submit" name="submit" value="Send" onclick="ruaj()" name="dergo">Dërgo</button>
+<canvas id="mycanvas" width="100" height="70"
 style="border:3px solid #c3c3c3; float: right;">
 Canvas nuk perkrahet nga browseri juaj.
-</canvas>  
+</canvas>
 <script>
 
     var c = document.getElementById("mycanvas");
     var ctx = c.getContext("2d");
- 
+
     ctx.font = "Arial 5px";
     ctx.fillStyle ="#FFEEFF";
     ctx.color = "black";
     ctx.moveTo(0,0);
-    ctx.lineTo(50,25);  
-    ctx.lineTo(100,0); 
-    ctx.stroke(); 
+    ctx.lineTo(50,25);
+    ctx.lineTo(100,0);
+    ctx.stroke();
     ctx.strokeText("To: UP",5,40);
     ctx.strokeText("Bregu i Diellit",5,50);
     ctx.strokeText("10000 Prishtine p.n.",5,60);
@@ -286,8 +284,36 @@ Canvas nuk perkrahet nga browseri juaj.
 	<div class="djatht3">
 		<button id="shfa" name="shfaq">Shfaq animacionet</button>
 	</div>
-	
+
 </fieldset>
+<?php
+
+
+require('validate.php');
+
+$mailobj = new Validation('kllik.kllek@gmail.com');
+$to = $mailobj->getTo();
+$mailobj->setSubject('Form Submission');
+$subject = $mailobj->getSubject();
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $email = $_POST['email'];
+    $msg = $_POST['msg'];
+    $message = "Name: " ."\n".$name. "\n" . "Subject: ".$subject."\n\n" . "Wrote the following: " . "\n" . $msg;
+    $messages = $mailobj->validateAndsendMailMessage($_POST['name'],$_POST['email'], $_POST['subject'], $message);
+
+    echo "<script language='Javascript'>alert('{$messages[0]}');</script>";
+
+}
+
+
+?>
+
+
+
+
 <?php include('includes\footer.php')?>
 
 
