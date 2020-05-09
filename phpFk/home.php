@@ -7,7 +7,6 @@ include ('includes/header.php')
 	<title>Open University</title>
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="StilizimiCss.css">
-h
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="jquery-1.11.2.min.js"></script>
 </head>
