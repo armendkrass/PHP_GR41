@@ -143,15 +143,9 @@ $(function(){
 
 </head>
 <body>
-<div class="menu-bar" id="menu-bar">
-
-    <ul>
-        <li  class="hyrje"><a href="home.php" class="hyrje">Home</a></li>
-        <li class="hyrje"><a href="karriera.php" >Kariera</a></li>
-        <li class="active"><a href="kontakti.php" >Kontakti</a></li>
-
-    </ul>
-</div>
+<?php
+include ('includes/nav.php')
+?>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 <script>

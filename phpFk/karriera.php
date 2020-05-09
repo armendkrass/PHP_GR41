@@ -1,4 +1,6 @@
-
+<?php
+include ('includes/header.php')
+?>
 <!DOCTYPE html>
 <html>
 	<head lang="en">
@@ -6,17 +8,11 @@
 		<title>
 			Karriera
 		</title>
+        <?php
+        include ('includes/nav.php')
+        ?>
 
-        <div class="menu-bar" id="menu-bar">
 
-            <ul>
-                <li  class="hyrje"><a href="home.php" class="hyrje">Home</a></li>
-
-                <li class="active"><a href="" >Kariera</a></li>
-                <li class="hyrje"><a href="kontakti.php" >Kontakti</a></li>
-
-            </ul>
-        </div>
 
         <link rel="stylesheet" href="css1.css" />
 		<link rel="stylesheet" type="text/css" href="StilizimiCss.css">
@@ -24,7 +20,7 @@
 		<script src="javascript.js"></script>
 	</head>
 	<body>
-    <?php include('includes\header.php')?>
+
     <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 
 			<script>

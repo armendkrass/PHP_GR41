@@ -1,5 +1,5 @@
 body{
-	background-color: black;
+	background-color: #3D585C;
 }
 .background{
   height: 700px;
@@ -105,12 +105,7 @@ font-size: 18px;
 
 
 }
-h1{
-font-family: 'Avenir LT W01 65', Arial;
- padding-right:  20px;
- text-shadow: 1px 1px 3px black;
 
-}
 fieldset input,textarea{
 margin:5px 0 ;
 border-color: black ;
@@ -286,64 +281,6 @@ ul li{
 
 }
 
-
-.menu-bar
-{
-
-	background: #2e2e2e;
-	text-align: left;
-
-
-
-}
-.menu-bar ul
-{
-	display: inline-flex;
-	list-style: none;
-	color: #fff;
-	font-family: georgia;
-	font-size:12pt;
-	text-transform: uppercase;
-
-}
-.menu-bar ul li
-{
-	width: 150px;
-	margin: 10px;
-	padding: 10px;
-
-
-}
-.menu-bar ul li a
-{
-	text-decoration: none;
-	color: #fff;
-
-}
-.active,.menu-bar ul li:hover
-{
-	background: #00d2ff;
-	border-radius: 3px;
-
-}
-.sub-menu-1
-{
-	display: none;
-}
-.menu-bar ul li:hover .sub-menu-1
-{
-	display: block;
-	position: absolute;
-	background: #2e2e2e;
-	margin-top: 10px;
-	margin-left: -10px;
-}
-.menu-bar ul li:hover .sub-menu-1 ul
-{
-	display: block;
-	margin: 10px;
-
-}
 .hyrje
 {
 	display: block;

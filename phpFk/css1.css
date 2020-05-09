@@ -6,19 +6,7 @@ body:not(#cls1)
 	margin: 0em 1em 0em 1em;
 	padding: 0em 1em 0em 1em ;
 }
-h1
-{
-	font-family: "Roboto", sans-serif;
-	font-size: 2.5em;
-	background-color: #2E2E2E;
-	color: #f6f5f2;
-	margin: 0em 0.1em 1em 0.1em;
-	padding: 0.4em 1em 0.5em 1.5em ;
-	text-align: center;
-	letter-spacing: 1px;
-	border:1px solid;
-	border-color: white;
-}
+
 
 body section table th
 {
@@ -393,29 +381,4 @@ color: #660000;
 	padding: 0em 1em 0em 1em ;
 }
 
-ul li{
-	list-style-type: none;
-}
-
-#headerul {
-	float: right;
-}
-
-#headerul li {
-	display: inline-block;
-	margin: 10px;
-}
-#header{
-
-	background-color:black;
-	border-bottom:30px solid black;
-	padding: 5px;
-}
-#header div{
-	color:grey;
-	background-color:black;
-	padding:10px;
-
-
-}
 

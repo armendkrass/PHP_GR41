@@ -14,13 +14,15 @@ if (isset($_GET['logout'])) {
 ?>
 
 <header >
+    <link rel="stylesheet" type="text/css" href="reset.css">
+
     <div id="header" style="font-size:17px;color: white;margin-right: 15px;margin-left: 15px;">
         <?php  if (isset($_SESSION['name'])) : ?>
         <ul id="headerul">
             <li><p><?php $today = date("F j, Y");
             echo $today;
                     ?></p></li>
-            <li><p>Welcome <strong><?php
+            <li><p>Welcome<strong> <?php
                         $stringemri= implode(',' ,$_SESSION['name']);
                          echo  $stringemri;
                          ?></strong></p></li>
