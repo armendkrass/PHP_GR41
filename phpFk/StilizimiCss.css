@@ -4,7 +4,7 @@ body
 }
 
 
-}
+
 
 nav#menu
 {
@@ -260,20 +260,20 @@ color: #660000;
 @keyframes text{
 	0%{
 		color: #00d2ff;
-		
+
 	}
 	30%{
 	color: #00d2ff;
 		letter-spacing: 3px;
-	
+
 	}
 	80%
 	{
 		color: #00d2ff;
 		letter-spacing: 2.5px;
-		
+
 	}
-	
+
 
 }
 #myBtn {
@@ -301,29 +301,29 @@ color: #660000;
 
 
 ul li{
-    list-style-type: none;
+	list-style-type: none;
 }
 
-#right-navheader {
-    float: right;
+#headerul {
+	float: right;
 }
 
-#right-navheader li {
-    display: inline-block;
-    margin: 10px;
+#headerul li {
+	display: inline-block;
+	margin: 10px;
 }
-.top{
-	
+#header{
+
 	background-color:black;
 	border-bottom:30px solid black;
 	padding: 5px;
 }
-.top div{
+#header div{
 	color:grey;
 	background-color:black;
 	padding:10px;
 
-	
+
 }
 
 

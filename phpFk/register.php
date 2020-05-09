@@ -3,37 +3,32 @@
 <html>
 <head>
     <title>Registration system PHP and MySQL</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 <body>
-<div class="header">
-    <h2>Register</h2>
-</div>
 
+<div class="katrori">
+    <img src="foto/useri.png" class="useri">
+    <h1>Regjistrohu</h1>
 <form method="post" action="register.php">
     <?php include('errors.php'); ?>
     <div class="input-group">
-        <label>Username</label>
-        <input type="text" name="username" value="<?php echo $username; ?>">
+        <p>Emri</p>
+        <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Shkruaj Emrin">
+        <p>Mbiemri</p>
+        <input type="text" name="surname" value="<?php echo $surname; ?>" required="" id="idja" placeholder="Shkruaj Mbiemrin">
+        <p>Email</p>
+        <input type="email" name="email" value="<?php echo $email; ?> " placeholder="Shkruaj Email">
+        <p>Password</p>
+        <input type="password" name="password_1" required="" id="pasi" placeholder="Shkruaj Fjalkalimin">
+        <p>Confirm Password</p>
+        <input type="password" name="password_2" required="" id="pasi" placeholder="Konfirmo Fjalkalimin">
+
+        <button type="submit" class="btn" name="reg_user">Finalizo</button>
+        <a href="login.php">Already a user?</a>
     </div>
-    <div class="input-group">
-        <label>Email</label>
-        <input type="email" name="email" value="<?php echo $email; ?>">
-    </div>
-    <div class="input-group">
-        <label>Password</label>
-        <input type="password" name="password_1">
-    </div>
-    <div class="input-group">
-        <label>Confirm password</label>
-        <input type="password" name="password_2">
-    </div>
-    <div class="input-group">
-        <button type="submit" class="btn" name="reg_user">Register</button>
-    </div>
-    <p>
-        Already a member? <a href="login.php">Sign in</a>
-    </p>
+
 </form>
+</div>
 </body>
 </html>

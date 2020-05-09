@@ -1,3 +1,6 @@
+<?php
+include ('includes/header.php')
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +16,9 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 
 <script>
-///funksioni me marr butonin 
+
 var mybutton = document.getElementById("myBtn");
 
-// kur shkon ma shum se 210 px me shfaq butonin
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -26,18 +28,26 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
-// kur e klikon butonin me shku nalt
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };
 
-
-
-
 </script>
-<?php include('includes\header.php')?>
+
+<span id="inline" ><h1>OPEN UNIVERSITY</h1></span>
+
+<div  id="menubar">
+    <ul>
+        <li  class="active"><a href="">Home</a></li>
+
+        <li><a href="karriera.php" class="hyrje">Kariera</a></li>
+        <li><a href="kontakti.php" class="hyrje">Kontakti</a></li>
+
+
+    </ul>
+</div>
+
     <figure id="uni1">
     	<a href="universiteti.jpg" >
     <img src="foto/universiteti.jpg" alt="Fotografia e Objektit universitar" height="100%" width="100%"/>

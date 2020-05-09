@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head lang="en">
@@ -5,36 +6,30 @@
 		<title>
 			Karriera
 		</title>
-		<div class="menu-bar">
-			<ul>
- 				<li><a href="home.html" class="hyrje">Home</a></li>
-  				<li class="active"><a href="" >Karriera</a></li>
-  				<li><a href="kontakti.html" class="hyrje">Kontakti</a></li>
-  				<li ><a href="galeria.html" class="hyrje">Galeria</a></li>
-  				<li><a href="" class="hyrje">DropDown</a>
-					<div class="sub-menu-1">
-  						<ul>
-							<li><a href="" class="hyrje">DropDown1</a></li>
-							<li><a href="" class="hyrje" >DropDown2</a></li>
-  							</ul>
-  						</div>
-  				</li>
-  				
-			</ul>
-		</div>
-		<link rel="stylesheet" href="css1.css" />
+
+        <div class="menu-bar" id="menu-bar">
+
+            <ul>
+                <li  class="hyrje"><a href="home.php" class="hyrje">Home</a></li>
+
+                <li class="active"><a href="" >Kariera</a></li>
+                <li class="hyrje"><a href="kontakti.php" >Kontakti</a></li>
+
+            </ul>
+        </div>
+
+        <link rel="stylesheet" href="css1.css" />
 		<link rel="stylesheet" type="text/css" href="StilizimiCss.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="javascript.js"></script>
 	</head>
 	<body>
-		<button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+    <?php include('includes\header.php')?>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 
 			<script>
-				//funksioni me marr butonin 
 				var mybutton = document.getElementById("myBtn");
 
-				// kur shkon ma shum se 210 px me shfaq butonin			
 				window.onscroll = function() {scrollFunction()};
 
 				function scrollFunction() {
@@ -45,7 +40,6 @@
   						}
 				}
 
-				//	 kur e klikon butonin me shku nalt
 				function topFunction() {
   				document.body.scrollTop = 0;
   				document.documentElement.scrollTop = 0;

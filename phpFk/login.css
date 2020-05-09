@@ -12,7 +12,7 @@ body{
 .katrori{
 
     width: 350px;
-    height: 425px;
+    height: 390px;
     background: #000;
     color: #fff;
     top: 50%;
@@ -22,7 +22,7 @@ body{
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 5%;
-  
+
 }
 
 .useri{
@@ -74,7 +74,7 @@ h1{
 }
 .katrori button
 {
-    
+
     border: none;
     outline: none;
     height: 40px;
@@ -82,8 +82,8 @@ h1{
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
-    width: 290px;
-  }
+    width: 100px;
+}
 .katrori button:hover
 {
     cursor: pointer;
@@ -101,7 +101,9 @@ h1{
 {
     color: #ffc107;
 }
-
+#acc{
+    margin-left: 75px;
+}
 
 
 

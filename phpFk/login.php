@@ -3,29 +3,28 @@
 <html>
 <head>
     <title>Registration system PHP and MySQL</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-<div class="header">
-    <h2>Login</h2>
-</div>
 
+<div class="katrori">
+    <img src="foto/useri.png" class="useri">
+    <h1>Hyrja</h1>
 <form method="post" action="login.php">
     <?php include('errors.php'); ?>
     <div class="input-group">
-        <label>Username</label>
-        <input type="text" name="username" >
-    </div>
-    <div class="input-group">
-        <label>Password</label>
-        <input type="password" name="password">
-    </div>
-    <div class="input-group">
+        <p>Email</p>
+        <input type="email" name="email" required="" id="em" placeholder="Shkruaj Email" >
+
+        <p>Password</p>
+        <input type="password" name="password" required="" id="pasi" placeholder="Shkruaj Fjalëkalimin">
+
         <button type="submit" class="btn" name="login_user">Login</button>
+        <a href="register.php" id="acc">Nuk keni account?</a>
+
     </div>
-    <p>
-        Not yet a member? <a href="register.php">Sign up</a>
-    </p>
+
 </form>
+</div>
 </body>
 </html>
