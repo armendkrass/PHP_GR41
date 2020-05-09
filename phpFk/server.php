@@ -21,24 +21,21 @@ if (isset($_POST['reg_user'])) {
 
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
-    if (empty($name)) { array_push($errors, "Shkruani emrin");
-    }
-    if (empty($surname)) { array_push($errors, "Shkruani mbiemrin");}
-    if (empty($email)) { array_push($errors, "Shkruani email"); }
-    if (empty($password_1)) { array_push($errors, "Shkruani fjalkalimin"); }
+
     if ($password_1 != $password_2) {
         array_push($errors, "Fjalkalimet duhen te jen te njejta");
     }
-    if (!filter_var($email,FILTER_VALIDATE_EMAIL) || !preg_match("/^([a-z0-9_.-]+){4}@([a-z]+){3}\.([a-z\.]{2,6})$/",$email)){
+    if (empty($email)||!filter_var($email,FILTER_VALIDATE_EMAIL) || !preg_match("/^([a-z0-9_.-]+){4}@([a-z]+){3}\.([a-z\.]{2,6})$/",$email)){
         array_push($errors,"Email eshte jo valide");
-    }if (!preg_match("/^[a-zA-Z ]*$/",$name))  {
-        array_push($errors, 'Emri duhet te permbaje vetem shkronja!');
     }
-    if (strlen($name)<3 || strlen($surname)<4)
-    {
-        array_push($errors,'Emri dhe mbiemri duhet te permbaje se paku 3 shkronja!');
-    }if (strlen($password_1)<8){
-        array_push($errors,'Fjalkalimi duhet ti ket me shum se 8 shkronja!');
+    if (empty($name)||!preg_match("/^[a-zA-Z ]*$/",$name)||strlen($name)<=3)  {
+        array_push($errors, 'Emri duhet te permbaje me shum se 2 shkronja!');
+    }
+    if (empty($surname)||!preg_match("/^[a-zA-Z ]*$/",$surname))  {
+        array_push($errors, 'Mbiemri duhet te permbaje me shum se 2 shkronja!');
+    }
+    if (empty($password_1) || !preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/",$password_1)){
+        array_push($errors,'Fjalkalimi duhet te permbaje se paku 8 karaktere, se paku nje numer, nje shkronje te vogel dhe nje shkronje te madhe!');
 
 
     }
