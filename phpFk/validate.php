@@ -31,7 +31,7 @@ class Validation extends Mail {
         if (!preg_match("/^[a-zA-Z ]*$/",$name))  {
             array_push($validationMessages, 'Emri duhet te permbaje vetem shkronja!');
         }
-        if (strlen($name)<3 && strlen($subject)<3)
+        if (strlen($name)<3 || strlen($subject)<10)
         {
             array_push($validationMessages,'Emri duhet te permbaje se paku 3 shkronja!');
         }
