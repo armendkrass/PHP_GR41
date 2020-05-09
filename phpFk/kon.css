@@ -291,17 +291,14 @@ ul li{
 
 @keyframes text{
 	0%{
-		color: #00d2ff;
 
 	}
 	30%{
-		color: #00d2ff;
 		letter-spacing: 3px;
 
 	}
 	80%
 	{
-		color: #00d2ff;
 		letter-spacing: 2.5px;
 
 	}
