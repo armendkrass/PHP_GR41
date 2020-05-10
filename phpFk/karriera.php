@@ -8,19 +8,10 @@ include ('includes/header.php')
 		<title>
 			Karriera
 		</title>
-        <link rel="stylesheet" type="text/css" href="includes/header.css">
 
-        <div  id="menubar">
-            <ul>
-                <li  ><a href="home.php">Home</a></li>
-
-                <li class="active"><a href="karriera.php" class="hyrje">Kariera</a></li>
-                <li ><a href="kontakti.php" class="hyrje">Kontakti</a></li>
-
-
-            </ul>
-        </div>
-
+        <?php
+        include ('includes/nav.php')
+        ?>
 
 
         <link rel="stylesheet" href="css1.css" />

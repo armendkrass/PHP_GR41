@@ -143,19 +143,9 @@ $(function(){
 
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="includes/header.css">
-
-<div  id="menubar">
-    <ul>
-        <li  ><a href="home.php">Home</a></li>
-
-        <li><a href="karriera.php" class="hyrje">Kariera</a></li>
-        <li class="active"><a href="kontakti.php" class="hyrje">Kontakti</a></li>
-
-
-    </ul>
-</div>
-
+<?php
+include ('includes/nav.php')
+?>
 <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 <script>
 var mybutton = document.getElementById("myBtn");

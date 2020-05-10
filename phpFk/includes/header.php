@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) {
 <header >
     <link rel="stylesheet" type="text/css" href="reset.css">
 
-    <div id="header" style="font-size:17px;color: white;margin-right: 15px;margin-left: 15px;">
+    <div id="header" style="font-size:17px;color: white;margin-right: 20px;margin-left: 20px;">
         <?php  if (isset($_SESSION['name'])) : ?>
         <ul id="headerul">
             <li><p><?php $today = date("F j, Y");
