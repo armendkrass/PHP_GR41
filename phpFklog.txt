@@ -84,3 +84,5 @@ Login invalid username
 Login attempt by : armendkras1@gmail.com
 Login invalid username
 Login attempt by : armendkras1@gmail.com
+Register valid
+Registeration done by asdadssad@asdasd.as
