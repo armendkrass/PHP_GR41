@@ -79,6 +79,7 @@ if (isset($_POST['reg_user'])) {
 if (isset($_POST['login_user'])) {
     require 'Functions.php';
     $functionsObj=new Functions();
+    //Sql anti injection o qekjo pjes: mysqli_real_escape_string
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -93,6 +94,7 @@ if (isset($_POST['login_user'])) {
         $password = md5($password);
         $query = "SELECT name FROM users WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
+        //Sql anti injection o qekjo pjes: if (mysqli_num_rows($results) == 1)
         if (mysqli_num_rows($results) == 1) {
 
             $name = mysqli_fetch_assoc($results);
