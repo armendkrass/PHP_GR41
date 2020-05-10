@@ -31,9 +31,9 @@ class Validation extends Mail {
         if (!preg_match("/^[a-zA-Z ]*$/",$name))  {
             array_push($validationMessages, 'Emri duhet te permbaje vetem shkronja!');
         }
-        if (strlen($name)<3 || strlen($subject)<10)
+        if (strlen($name)<3 || strlen($subject)<3)
         {
-            array_push($validationMessages,'Emri duhet te permbaje se paku 3 shkronja!');
+            array_push($validationMessages,'Emri dhe tema duhet te permbaje se paku 3 shkronja!');
         }
         if (!preg_match("/^([a-z0-9_\.-]+){4}@([a-z]+){3}\.([a-z\.]{2,6})$/",$email))  {
             array_push($validationMessages,'Email-i nuk eshte ne formatin e duhur!');

@@ -20,12 +20,12 @@ if (isset($_GET['logout'])) {
         <?php  if (isset($_SESSION['name'])) : ?>
         <ul id="headerul">
             <li><p><?php $today = date("F j, Y");
-            echo $today;
+                    echo $today;
                     ?></p></li>
             <li><p>Welcome<strong> <?php
                         $stringemri= implode(',' ,$_SESSION['name']);
-                         echo  $stringemri;
-                         ?></strong></p></li>
+                        echo  ucfirst($stringemri);
+                        ?></strong></p></li>
             <li><p> <a href="login.php?logout='1'" style="color: lightblue;">logout</a> </p></li>
             <?php endif ?>
         </ul>

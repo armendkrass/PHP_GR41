@@ -9,7 +9,6 @@ include ('includes/header.php')
 			Karriera
 		</title>
         <link rel="stylesheet" type="text/css" href="includes/header.css">
-        <span id="inline" ><h1 id="h1shi">OPEN UNIVERSITY</h1></span>
 
         <div  id="menubar">
             <ul>
@@ -63,7 +62,6 @@ include ('includes/header.php')
            @font-face
            {
                font-family: fontiJone;
-               src: url(Sansation_Light-webfont.woff);
            }
             
            h1 , .ora
@@ -71,7 +69,7 @@ include ('includes/header.php')
                font-family: fontiJone;
 			}
         </style>
-			
+			<hr >
 			 <table style="width:100%">
  		 <tr class="ffade">
     	<th>82 % e te diplomuarve jane te punesuar momentalisht</th>
@@ -255,14 +253,52 @@ include ('includes/header.php')
 
 				</th>
 			</tr>
+            <tr>
+                <td>
+                    <hr>
+                    <span style="color: wheat; font-size: 28px; "> BEFORE YOU LEAVE READ THESE FUNNY SENTENCES </span>  <br>
+                    <hr>
+
+                    <?php
+
+                    $text1 = " <h3 style='float: left; '> I was _VERBB_ in the _PLACE_ when I found a _NOUN_.<br>
+                                Then I had to go to the _PLACE_.</h3>";
+                    $text = str_replace('_VERBB_','_VERB_',$text1);
+
+                    $verbs = explode("\n", file_get_contents("words.verbs.txt"));
+                    $places = explode("\n", file_get_contents("words.places.txt"));
+                    $nouns = explode("\n", file_get_contents("words.nouns.txt"));
+
+                    while (preg_match("/(_VERB_)|(_PLACE_)|(_NOUN_)/", $text, $matches)) {
+                        switch ($matches[0]) {
+                            case '_VERB_' :
+                                shuffle($verbs);
+                                $text = preg_replace(',' . $matches[0] . ',', current($verbs), $text, 1);
+                                break;
+                            case '_PLACE_' :
+                                shuffle($places);
+                                $text = preg_replace(',' . $matches[0] . ',', current($places), $text, 1);
+                                break;
+                            case '_NOUN_' :
+                                shuffle($nouns);
+                                $text = preg_replace(',' . $matches[0] . ',', current($nouns), $text, 1);
+                                break;
+                        }
+                    }
+
+                    echo $text . "\n";
+
+                    ?>
+                </td>
+            </tr>
 			</table>
+
 			<hr style="margin-top:0 ;">
-		</br></br>
 			<div id="cls1">
 				<p class="zgjedh">
-					Zgjedh Open University
+					Like Open University
 				</p>
-				<button onclick="numrusi()" class="button1" style="vertical-align:middle"><span>Apliko tani</span></button>
+				<button onclick="numrusi()" class="button1" style="vertical-align:middle"><span>Kliko ketu</span></button>
 
 				
 				<a href="button1"> </a>
@@ -293,6 +329,7 @@ else
 			</div>
 		</br>
 		</br>
+
 		<?php include('includes\footer.php')?>
 	</div>
 </html>

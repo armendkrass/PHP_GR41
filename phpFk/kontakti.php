@@ -144,7 +144,6 @@ $(function(){
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="includes/header.css">
-<span id="inline" ><h1 id="h1shi">OPEN UNIVERSITY</h1></span>
 
 <div  id="menubar">
     <ul>
@@ -193,12 +192,23 @@ function topFunction() {
     		Universiteti i Prishtinës
     		</strong><br>
     		<address>
-    			Rr.Agim Ramadani <br>Prishtinë<br>
+
+                <?php
+                $address = "Agim Ramadani 40,10000 Prishtine,Kosove";
+                $arr = preg_split('/\,/', $address);
+                while (list($key, $value) = each ($arr))
+                    echo "<br/>".$value;
+                ?>
     		</address>
-    		<p>Tel.: +383(0)45 123 456
-    			<br>
-    			Fax: +383(0)38 123 456
-    			<br>
+
+    <?php
+    $number = array("Mobile"=>"+383(0)45 123 456", "Fix"=>"+383(0)38 123 456");
+    echo "Tel.: " . $number['Mobile'] . " ";
+    echo "<br>";
+    echo "Fix:  : " . $number['Fix'] . " ";
+    echo "<br>";
+    ?>
+    		<p>
     			E-mail:<a class="email" href="https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail&hl=en-GB&dsh=S1158375489%3A1577471946304138&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp" id="gm">up@gmail.com</a>
     		</p>
     		<button id="linku">Trego atributin</button>
@@ -233,11 +243,13 @@ function topFunction() {
 <button id="mikthy">Shfaqi ikonat</button>
 </div>
 </div>
+
 <div class="jv" id="qw">Kliko për të fshehur formularin! </div>
 <fieldset  id="field">
 	<form id="forma" action="" name="form" method="post"  onsubmit="return kqyr()  " >
 		<div class="majt">
-			<h1>Na dërgoni një mesazh :</h1>
+			<h1 style="font-size: 30px;">Na dërgoni një mesazh :</h1>
+            <br>
 			<label for="name">Emri</label><br>
 			<input type="text" id="emri" name="name" placeholder="Shkruani emrin " autocomplete="off"><br>
             <span id="mbushemrin"></span><br>
@@ -251,7 +263,7 @@ function topFunction() {
             <label for="msg">Mesazhi</label><br>
 			<textarea type="text" id="mess" name="msg" rows="5" placeholder="Shkruani mesazhin" autocomplete="off"></textarea><br>
             <span id="mbushmessazhin"></span><br>
-			<button type="submit" name="submit" value="Send" onclick="ruaj()" name="dergo">Dërgo</button>
+			<button type="submit" name="submit" value="Send" onclick="ruaj()" name="submit">Dërgo</button>
 <canvas id="mycanvas" width="100" height="70"
 style="border:3px solid #c3c3c3; float: right;">
 Canvas nuk perkrahet nga browseri juaj.
@@ -305,7 +317,7 @@ if (isset($_POST['submit'])) {
     $subject = $_POST['subject'];
     $email = $_POST['email'];
     $msg = $_POST['msg'];
-    $message = "Name: " ."\n".$name. "\n" . "Subject: ".$subject."\n\n" . "Wrote the following: " . "\n" . $msg;
+    $message = "Name: " ."\n".trim(substr($name,0,15)). "\n" . "Subject: ".trim(substr($subject,0,15))."\n\n" . "Wrote the following: " . "\n" .trim(substr($msg,0,100));
     $messages = $mailobj->validateAndsendMailMessage($_POST['name'],$_POST['email'], $_POST['subject'], $message);
 
     echo "<script language='Javascript'>alert('{$messages[0]}');</script>";

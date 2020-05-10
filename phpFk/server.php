@@ -56,6 +56,8 @@ if (isset($_POST['reg_user'])) {
 
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
+        require 'Functions.php';
+        $functionsObj=new Functions();
         $password = md5($password_1);//encrypt the password before saving in the database
 
         $query = "INSERT INTO users (name,surname ,email, password) 
@@ -65,6 +67,9 @@ if (isset($_POST['reg_user'])) {
         $_SESSION['email']=$email;
         $_SESSION['name']=$string2array;
 
+        $functionsObj->writeLog("Register valid");
+        $functionsObj->writeLog("Registeration done by $email");
+
         header('location: home.php');
 
     }
@@ -72,6 +77,8 @@ if (isset($_POST['reg_user'])) {
 
 // LOGIN USER
 if (isset($_POST['login_user'])) {
+    require 'Functions.php';
+    $functionsObj=new Functions();
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -87,14 +94,23 @@ if (isset($_POST['login_user'])) {
         $query = "SELECT name FROM users WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
+
             $name = mysqli_fetch_assoc($results);
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
-            $_SESSION['success'] = "You are now logged in";
+            $functionsObj->writeLog("Login valid");
+            $functionsObj->writeLog("Login done by : $email");
             header('location: home.php');
 
+
+
         }else {
-            array_push($errors, "Wrong name/password combination");
+
+
+            header("location:login.php?error=wrong/user/and/password");
+            $functionsObj->writeLog("Login invalid username");
+            $functionsObj->writeLog("Login attempt by : $email");
+
         }
     }
 }

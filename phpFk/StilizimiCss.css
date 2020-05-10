@@ -2,10 +2,6 @@ body
 {
 	background-color:#3d585c;
 }
-
-
-
-
 nav#menu
 {
 	
@@ -43,8 +39,7 @@ input#searchbox
 {
 	color:white;
 }
-::webkit-input-placeholder{
-	color:white;}
+
 	:-ms-input-placeholder
 	{
 		color:white;
