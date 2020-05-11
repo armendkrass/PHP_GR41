@@ -1,5 +1,5 @@
 <?php
-include ('includes/header.php')
+include('header.php')
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ include ('includes/header.php')
 		</title>
 
         <?php
-        include ('includes/nav.php')
+        include('nav.php')
         ?>
 
 
@@ -255,11 +255,16 @@ include ('includes/header.php')
                     $text1 = " <h3 style='float: left; '> I was _VERBB_ in the _PLACE_ when I found a _NOUN_.<br>
                                 Then I had to go to the _PLACE_.</h3>";
                     $text = str_replace('_VERBB_','_VERB_',$text1);
+                    try {
+
 
                     $verbs = explode("\n", file_get_contents("words.verbs.txt"));
                     $places = explode("\n", file_get_contents("words.places.txt"));
                     $nouns = explode("\n", file_get_contents("words.nouns.txt"));
-
+                    } catch (Exception $exception)
+                    {
+                        echo "<p>Diqka ka ndodh keq te leximi fajllav</p> ";
+                    }
                     while (preg_match("/(_VERB_)|(_PLACE_)|(_NOUN_)/", $text, $matches)) {
                         switch ($matches[0]) {
                             case '_VERB_' :
@@ -286,16 +291,19 @@ include ('includes/header.php')
 
 			<hr style="margin-top:0 ;">
 			<div id="cls1">
-				<p class="zgjedh">
+				<p class="zgjedh" style="color:whitesmoke;">
 					Like Open University
 				</p>
 				<button onclick="numrusi()" class="button1" style="vertical-align:middle"><span>Kliko ketu</span></button>
 
-				
-				<a href="button1"> </a>
+                <form method="GET"  action="get.php">
+                    <p class="zgjedh" style="color:whitesmoke;">Doni te shikoni motin ne ndonje vend te botes ??</p>
+                    <p class="zgjedh" style="font-size: 20px;color:whitesmoke;">Vetem shkruani emrin e qytetit .</p>
+                    <input style="border: none;border-bottom: 1px solid #fff;background: transparent;outline: none;height: 40px;color: #fff;font-size: 16px;" type="text" name="q" placeholder="Shkruaj ketu" required>
+                    <input type="submit"  style="font-size: 20px; background-color: #3277AE; border-radius: 10%; border: none; color: whitesmoke" name="submit">
+                </form>
 								<script>
-				function numrusi()
-{
+function numrusi() {
 if(typeof(Storage)!=="undefined")
   {
   if (sessionStorage.clickcount)
@@ -318,6 +326,7 @@ else
 
 
 			</div>
+        <div ></div>
 		</br>
 		</br>
 

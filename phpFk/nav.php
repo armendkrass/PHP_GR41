@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="includes/header.css">
+<link rel="stylesheet" type="text/css" href="header.css">
 <title>
     Karriera
 </title>
@@ -6,7 +6,7 @@
 
 <div  id="menubar">
     <ul>
-        <li class="active" ><a href="home.php">Home</a></li>
+        <li  ><a href="home.php">Home</a></li>
 
         <li><a href="karriera.php" class="hyrje">Kariera</a></li>
         <li ><a href="kontakti.php" class="hyrje">Kontakti</a></li>

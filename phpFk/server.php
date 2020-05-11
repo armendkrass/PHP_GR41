@@ -6,10 +6,15 @@ $name = "";
 $surname="";
 $email    = "";
 $errors = array();
+try {
+
 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'registration');
+}catch (Exception $exception){
+    echo "<script language='Javascript'>alert('Lidhja me db nuk ka ndodh');</script>";
 
+}
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
     // receive all input values from the form
@@ -28,16 +33,14 @@ if (isset($_POST['reg_user'])) {
     if (empty($email)||!filter_var($email,FILTER_VALIDATE_EMAIL) || !preg_match("/^([a-z0-9_.-]+){4}@([a-z]+){3}\.([a-z\.]{2,6})$/",$email)){
         array_push($errors,"Email eshte jo valide");
     }
-    if (empty($name)||!preg_match("/^[a-zA-Z ]*$/",$name)||strlen($name)<=3)  {
-        array_push($errors, 'Emri duhet te permbaje me shum se 2 shkronja!');
+    if (empty($name)||!preg_match("/^[a-zA-Z ]*$/",$name)||strlen($name)<3)  {
+        array_push($errors, 'Emri duhet te permbaje vetem shkronja dhe jo me pak se 2!');
     }
     if (empty($surname)||!preg_match("/^[a-zA-Z ]*$/",$surname))  {
         array_push($errors, 'Mbiemri duhet te permbaje me shum se 2 shkronja!');
     }
     if (empty($password_1) || !preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/",$password_1)){
         array_push($errors,'Fjalkalimi duhet te permbaje se paku 8 karaktere, se paku nje numer, nje shkronje te vogel dhe nje shkronje te madhe!');
-
-
     }
 
     // first check the database to make sure
@@ -47,7 +50,6 @@ if (isset($_POST['reg_user'])) {
     $user = mysqli_fetch_assoc($result);
 
     if ($user) { // if user exists
-
 
         if ($user['email'] === $email) {
             array_push($errors, "email eshte nen perdorim");
@@ -108,7 +110,7 @@ if (isset($_POST['login_user'])) {
 
         }else {
 
-
+            array_push($errors, "Email ose fjalkalimi eshte gabim");
             header("location:login.php?error=wrong/user/and/password");
             $functionsObj->writeLog("Login invalid username");
             $functionsObj->writeLog("Login attempt by : $email");

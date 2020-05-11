@@ -11,8 +11,8 @@
     <img src="foto/useri.png" class="useri">
     <h1>Regjistrohu</h1>
 <form method="post" action="register.php">
-    <?php include('errors.php'); ?>
     <div class="input-group">
+        <?php include('errors.php'); ?>
         <p>Emri</p>
         <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Shkruaj Emrin">
         <p>Mbiemri</p>

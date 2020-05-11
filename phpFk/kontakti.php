@@ -1,4 +1,4 @@
-<?php include('includes\header.php')?>
+<?php include('header.php') ?>
 
 <!DOCTYPE html>
 <html>
@@ -144,7 +144,7 @@ $(function(){
 </head>
 <body>
 <?php
-include ('includes/nav.php')
+include('nav.php')
 ?>
 <button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
 <script>
@@ -292,7 +292,10 @@ Canvas nuk perkrahet nga browseri juaj.
 	</div>
 
 </fieldset>
+
 <?php
+
+try {
 
 
 require('validate.php');
@@ -313,8 +316,9 @@ if (isset($_POST['submit'])) {
     echo "<script language='Javascript'>alert('{$messages[0]}');</script>";
 
 }
-
-
+} catch (Exception $exception) {
+    echo "<p>Naj gabim kur e ka lexu email ka ndodh </p>";
+}
 ?>
 
 
