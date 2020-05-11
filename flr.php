@@ -162,7 +162,7 @@ echo "Hosti i headerit prej kerkeses momentale eshte: ".$_SERVER['HTTP_HOST'];
 echo "<br>";
 
 echo "<br>";
-echo "Permbajtja e web-broweserit".$_SERVER['HTTP_USER_AGENT'];
+echo "Permbajtja e webrowserit ekzekutues".$_SERVER['HTTP_USER_AGENT'];
 echo "<br>";
 
 ?>
