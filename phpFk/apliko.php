@@ -46,3 +46,7 @@
 							</select>
 						<button type="submit"  class="buto1" onclick="plotsimihapsirav() ">Regjistrohuni</button>
 					</br>
+					</form>
+		</div>
+	</body>
+</html>
