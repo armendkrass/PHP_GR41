@@ -37,3 +37,7 @@
 							<input type="number" name="number" required=""  placeholder="+383-04#-###-###">
 						<p>Zgjedhni drejtimin</p>
 							<select class ="droplist" required="">
+								<option value="a">BSc - Menaxhimi i Bazave të të Dhënave dhe Rrjeteve</option>
+							  	<option value="b">BSc - Programimi për Paisje Mobile dhe Cloud</option>
+							  	<option value="c">BSc - Siguria Kibernetike (Cyber Security)</option>
+							  	<option value="d">BA - Analizë Ekonomike për biznes</option>
