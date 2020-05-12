@@ -41,3 +41,8 @@
 							  	<option value="b">BSc - Programimi për Paisje Mobile dhe Cloud</option>
 							  	<option value="c">BSc - Siguria Kibernetike (Cyber Security)</option>
 							  	<option value="d">BA - Analizë Ekonomike për biznes</option>
+							  	<option value="e">BA - Banka, Financa dhe Kontabilitet</option>
+							  	<option value="f">BA - Menaxhment dhe Marketing</option>
+							</select>
+						<button type="submit"  class="buto1" onclick="plotsimihapsirav() ">Regjistrohuni</button>
+					</br>
