@@ -1,5 +1,5 @@
 <?php
-include('header.php');
+include ('includes/header.php');
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ include('header.php');
 
 </script>
 <?php
-include('nav.php')
+include ('includes/nav.php')
 ?>
 
 <figure id="uni1">

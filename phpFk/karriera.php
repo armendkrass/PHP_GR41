@@ -2,7 +2,7 @@
 include('header.php')
 ?>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head lang="en">
 		<meta charset="utf-8">
 		<title>
@@ -330,6 +330,64 @@ else
 		</br>
 		</br>
 
-		<?php include('includes\footer.php')?>
+
+        <div style="width: 50%;height: auto;margin: 10px;border 1px solid black;">
+            <div id="display_area" style="width: 47.4%;margin: 5px;background: #7991A4;padding: 15px;border: solid black 1px;">
+    <p style="font-weight: bold;">Shkruaj nje koment...</p>
+            </div>
+            <div style="list-style-type: none;margin: 5px;width: 50%;background: #7991A4;padding: 5px;border: solid black 1px;">
+                <li style="color: black;font-weight: bold">Emri: </li>
+                <li style="width: 80%;"><input type="text" id="name"></li>
+
+                <li style="color: black;font-weight: bold">Komenti: </li>
+                 <li><textarea id="comment"></textarea></li>
+                <li><input type="submit" id="submit_comment" value="POST"></li>
+            </div>
+        </div>
+
+
+        <?php include('includes\footer.php')?>
 	</div>
 </html>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" >
+    $(document).ready(function () {
+$("#submit_comment").click(function () {
+    var name=$("#name").val();
+    var comment=$("#comment").val();
+
+    $.ajax({
+        url:"ajax.php",
+        type:"post",
+        async:false,
+        data:{
+            "done": 1,
+            "username": name,
+            "comment_text": comment
+        },
+
+        success:function (data) {
+            displayFromDatabase();
+            $("#name").val('');
+            $("#comment").val('');
+        }
+    })
+})
+            });
+    function displayFromDatabase() {
+        $.ajax({
+            url: "ajax.php",
+            type: "POST",
+            async: false,
+            data:
+                {
+                    "display": 1
+                },
+                success: function(d){
+                $("#display_area").html(d);
+                }
+        });
+
+    }
+</script>
