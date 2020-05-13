@@ -290,19 +290,40 @@ include('header.php')
 			</table>
 
 			<hr style="margin-top:0 ;">
-			<div id="cls1">
-				<p class="zgjedh" style="color:whitesmoke;">
-					Like Open University
-				</p>
-				<button onclick="numrusi()" class="button1" style="vertical-align:middle"><span>Kliko ketu</span></button>
 
-                <form method="GET"  action="get.php">
-                    <p class="zgjedh" style="color:whitesmoke;">Doni te shikoni motin ne ndonje vend te botes ??</p>
-                    <p class="zgjedh" style="font-size: 20px;color:whitesmoke;">Vetem shkruani emrin e qytetit .</p>
-                    <input style="border: none;border-bottom: 1px solid #fff;background: transparent;outline: none;height: 40px;color: #fff;font-size: 16px;" type="text" name="q" placeholder="Shkruaj ketu" required>
-                    <input type="submit"  style="font-size: 20px; background-color: #3277AE; border-radius: 10%; border: none; color: whitesmoke" name="submit">
-                </form>
-								<script>
+
+        <div id="cls1">
+            <p class="zgjedh" style="color:whitesmoke;">
+                Pëlqe Open University
+            </p>
+            <button onclick="numrusi()" class="button1" style="vertical-align:middle"><span>Pëqle ketu</span></button>
+            <div id="result"></div>
+
+            <form method="GET"  action="get.php">
+                <p class="zgjedh" style="color:whitesmoke;">Doni te shikoni motin ne ndonje vend te botes ??</p>
+                <p class="zgjedh" style="font-size: 20px;color:whitesmoke;">Vetem shkruani emrin e qytetit .</p>
+                <input style="border: none;border-bottom: 1px solid #fff;background: transparent;outline: none;height: 40px;color: #fff;font-size: 16px;" type="text" name="q" placeholder="Shkruaj ketu" required>
+                <input type="submit"  style="font-size: 20px; background-color: #3277AE; border-radius: 10%; border: none; color: whitesmoke" name="submit">
+            </form>
+
+
+        </div>
+        <div style="width: 50%;height: auto;border 1px solid black; padding-left: 30px;">
+            <div id="display_area" style="width: 47.4%;margin: 5px;background: #7991A4;padding: 15px;border: solid black 1px;">
+                <p style="font-weight: bold;">Shkruaj nje koment...</p>
+            </div>
+            <div style="list-style-type: none;margin: 5px;width: 50%;background: #7991A4;padding: 5px;border: solid black 1px;">
+                <li style="color: black;font-weight: bold">Emri: </li>
+                <li style="width: 80%;"><input type="text" id="name"></li>
+
+                <li style="color: black;font-weight: bold">Komenti: </li>
+                <li><textarea id="comment"></textarea></li>
+                <li><input type="submit" id="submit_comment" value="POST"></li>
+            </div>
+
+    </div>
+
+                <script>
 function numrusi() {
 if(typeof(Storage)!=="undefined")
   {
@@ -314,7 +335,7 @@ if(typeof(Storage)!=="undefined")
     {
     sessionStorage.clickcount=1;
     }
-     document.getElementById("result").innerHTML="Keni klikuar butonin " + sessionStorage.clickcount + " herë ne kete sesion.";
+     document.getElementById("result").innerHTML="Keni pëlqyer open university " + sessionStorage.clickcount + " herë ne kete sesion.";
   }
 else
   {
@@ -322,33 +343,9 @@ else
   }
 }
 </script>
-    <div id="result"></div>
 
-
-			</div>
-        <div ></div>
-		</br>
-		</br>
-
-
-        <div style="width: 50%;height: auto;margin: 10px;border 1px solid black;">
-            <div id="display_area" style="width: 47.4%;margin: 5px;background: #7991A4;padding: 15px;border: solid black 1px;">
-    <p style="font-weight: bold;">Shkruaj nje koment...</p>
-            </div>
-            <div style="list-style-type: none;margin: 5px;width: 50%;background: #7991A4;padding: 5px;border: solid black 1px;">
-                <li style="color: black;font-weight: bold">Emri: </li>
-                <li style="width: 80%;"><input type="text" id="name"></li>
-
-                <li style="color: black;font-weight: bold">Komenti: </li>
-                 <li><textarea id="comment"></textarea></li>
-                <li><input type="submit" id="submit_comment" value="POST"></li>
-            </div>
-        </div>
-
-
-        <?php include('includes\footer.php')?>
-	</div>
 </html>
+<?php include('includes\footer.php')?>
 
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" >
