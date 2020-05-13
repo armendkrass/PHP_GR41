@@ -114,3 +114,49 @@ h1{
     color: #fff;
     font-size: 16px;
 }
+.katrori button
+{
+    
+    border: none;
+    outline: none;
+    height: 40px;
+    background: blue;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 290px;
+}
+.katrori button:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.katrori a
+{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.katrori a:hover
+{
+    color: #ffc107;
+}
+.droplist
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: red;
+    font-size: 16px;
+    margin-bottom: 30px;
+
+}
+.buto1
+{
+    position: center;
+}
