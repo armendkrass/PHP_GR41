@@ -12,7 +12,8 @@ try {
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'registration');
 }catch (Exception $exception){
-    echo "<script language='Javascript'>alert('Lidhja me db nuk ka ndodh');</script>";
+    header("location:login.php?error=db");
+
 
 }
 // REGISTER USER
@@ -97,26 +98,30 @@ if (isset($_POST['login_user'])) {
         $query = "SELECT name FROM users WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
         //Sql anti injection o qekjo pjes: if (mysqli_num_rows($results) == 1)
+        $name = mysqli_fetch_assoc($results);
         if (mysqli_num_rows($results) == 1) {
+            if (!empty($_POST["remember"])) {
+                    setcookie("email", $email, time() + (10 * 365 * 24 * 60 * 60));
+                } else {
+                    if (isset($_COOKIE["email"])) {
+                        setcookie("email", "");
+                    }
 
-            $name = mysqli_fetch_assoc($results);
-            $_SESSION['name'] = $name;
-            $_SESSION['email'] = $email;
-            $functionsObj->writeLog("Login valid");
-            $functionsObj->writeLog("Login done by : $email");
-            header('location: home.php');
+                }
+                $_SESSION['email'] = $email;
+                $_SESSION['name'] = $name;
+                $functionsObj->writeLog("Login valid");
+                $functionsObj->writeLog("Login done by : $email");
+                header('location: home.php');
 
 
+            } else {
+                header("location:login.php?error=wrong/user/and/password");
+                $functionsObj->writeLog("Login invalid username");
+                $functionsObj->writeLog("Login attempt by : $email");
 
-        }else {
-
-            array_push($errors, "Email ose fjalkalimi eshte gabim");
-            header("location:login.php?error=wrong/user/and/password");
-            $functionsObj->writeLog("Login invalid username");
-            $functionsObj->writeLog("Login attempt by : $email");
-
+            }
         }
-    }
 }
 
 ?>
