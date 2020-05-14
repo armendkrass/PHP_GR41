@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// initializing variables
 $name = "";
 $surname="";
 $email    = "";
@@ -9,7 +8,6 @@ $errors = array();
 try {
 
 
-// connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'registration');
 }catch (Exception $exception){
     header("location:login.php?error=db");
@@ -24,9 +22,6 @@ if (isset($_POST['reg_user'])) {
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
-    // form validation: ensure that the form is correctly filled ...
-    // by adding (array_push()) corresponding error unto $errors array
 
     if ($password_1 != $password_2) {
         array_push($errors, "Fjalkalimet duhen te jen te njejta");
@@ -44,8 +39,6 @@ if (isset($_POST['reg_user'])) {
         array_push($errors,'Fjalkalimi duhet te permbaje se paku 8 karaktere, se paku nje numer, nje shkronje te vogel dhe nje shkronje te madhe!');
     }
 
-    // first check the database to make sure
-    // a user does not already exist with the same name and/or email
     $user_check_query = "SELECT * FROM users WHERE email='$email'";
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result);
@@ -56,12 +49,10 @@ if (isset($_POST['reg_user'])) {
             array_push($errors, "email eshte nen perdorim");
         }
     }
-
-    // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
         require 'Functions.php';
         $functionsObj=new Functions();
-        $password = md5($password_1);//encrypt the password before saving in the database
+        $password = md5($password_1);
 
         $query = "INSERT INTO users (name,surname ,email, password) 
   			  VALUES('$name', '$surname','$email', '$password')";
@@ -78,11 +69,9 @@ if (isset($_POST['reg_user'])) {
     }
 }
 
-// LOGIN USER
 if (isset($_POST['login_user'])) {
     require 'Functions.php';
     $functionsObj=new Functions();
-    //Sql anti injection o qekjo pjes: mysqli_real_escape_string
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -97,7 +86,6 @@ if (isset($_POST['login_user'])) {
         $password = md5($password);
         $query = "SELECT name FROM users WHERE email='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
-        //Sql anti injection o qekjo pjes: if (mysqli_num_rows($results) == 1)
         $name = mysqli_fetch_assoc($results);
         if (mysqli_num_rows($results) == 1) {
             if (!empty($_POST["remember"])) {

@@ -1,6 +1,5 @@
 <?php
 include("db.php");
-//save to database
 if(isset($_POST['done'])){
    $name=mysqli_escape_string($connect,$_POST['username']);
    $comment=mysqli_escape_string($connect,$_POST['comment_text']);
