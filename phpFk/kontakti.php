@@ -310,7 +310,7 @@ if (isset($_POST['submit'])) {
     $subject = $_POST['subject'];
     $email = $_POST['email'];
     $msg = $_POST['msg'];
-    $message = "Name: " ."\n".trim(substr($name,0,15)). "\n" . "Subject: ".trim(substr($subject,0,15))."\n\n" . "Wrote the following: " . "\n" .trim(substr($msg,0,100));
+    $message = "Name: " ."\n".trim(substr($name,0,15)). "\n" . "Subject: \n".trim(substr($subject,0,15))."\n" . "Wrote the following: " . "\n" .trim(substr($msg,0,100));
     $messages = $mailobj->validateAndsendMailMessage($_POST['name'],$_POST['email'], $_POST['subject'], $message);
 
     echo "<script language='Javascript'>alert('{$messages[0]}');</script>";

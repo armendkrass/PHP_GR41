@@ -89,7 +89,7 @@ if (isset($_POST['login_user'])) {
         $name = mysqli_fetch_assoc($results);
         if (mysqli_num_rows($results) == 1) {
             if (!empty($_POST["remember"])) {
-                    setcookie("email", $email, time() + (10 * 365 * 24 * 60 * 60));
+                    setcookie("email", $email, time() + (6*30*24*3600));
                 } else {
                     if (isset($_COOKIE["email"])) {
                         setcookie("email", "");
