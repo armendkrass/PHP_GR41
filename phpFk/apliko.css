@@ -28,3 +28,135 @@ body
     margin-bottom: 80px
   
 }
+.useri
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+body
+{
+    
+    background: url(foto/librat.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    padding: 390px;
+    margin-top: 4em;
+    padding-top: 4em;
+
+}
+.katrori
+{
+    margin-top: 17em;
+    padding-top: 17em;
+    width: 450px;
+    height: 834px;
+    background: #000;
+    color: #fff;
+    top: 25%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px 300px 30px;
+    border-radius: 5%;
+    margin-bottom: 80px
+  
+}
+.useri
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.katrori p
+{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.katrori input
+{
+    width: 100%;
+    margin-bottom: 20px;
+    height:100%;
+}
+
+.katrori input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="number"], input[type="radio"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.katrori button
+{
+    
+    border: none;
+    outline: none;
+    height: 40px;
+    background: blue;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 290px;
+}
+.katrori button:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.katrori a
+{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.katrori a:hover
+{
+    color: #ffc107;
+}
+.droplist
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: red;
+    font-size: 16px;
+    margin-bottom: 30px;
+
+}
+.buto1
+{
+    position: center;
+}
