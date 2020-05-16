@@ -36,4 +36,17 @@
 						<p>Numri i telefonit</p>
 							<input type="number" name="number" required=""  placeholder="+383-04#-###-###">
 						<p>Zgjedhni drejtimin</p>
-							
+							<select class ="droplist" required="">
+								<option value="a">BSc - Menaxhimi i Bazave të të Dhënave dhe Rrjeteve</option>
+							  	<option value="b">BSc - Programimi për Paisje Mobile dhe Cloud</option>
+							  	<option value="c">BSc - Siguria Kibernetike (Cyber Security)</option>
+							  	<option value="d">BA - Analizë Ekonomike për biznes</option>
+							  	<option value="e">BA - Banka, Financa dhe Kontabilitet</option>
+							  	<option value="f">BA - Menaxhment dhe Marketing</option>
+							</select>
+						<button type="submit"  class="buto1" onclick="plotsimihapsirav() ">Regjistrohuni</button>
+					</br>
+					</form>
+		</div>
+	</body>
+</html>
