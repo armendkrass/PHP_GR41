@@ -14,9 +14,7 @@ $db = mysqli_connect('localhost', 'root', '', 'registration');
 
 
 }
-// REGISTER USER
 if (isset($_POST['reg_user'])) {
-    // receive all input values from the form
     $name = mysqli_real_escape_string($db, $_POST['name']);
     $surname = mysqli_real_escape_string($db, $_POST['surname']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -26,7 +24,7 @@ if (isset($_POST['reg_user'])) {
     if ($password_1 != $password_2) {
         array_push($errors, "Fjalkalimet duhen te jen te njejta");
     }
-    if (empty($email)||!filter_var($email,FILTER_VALIDATE_EMAIL) || !preg_match("/^([a-z0-9_.-]+){4}@([a-z]+){3}\.([a-z\.]{2,6})$/",$email)){
+    if (empty($email) || !filter_var($email,FILTER_VALIDATE_EMAIL) || !preg_match("/^([a-z0-9_.-]+){4}@([a-z]+){3}\.([a-z\.]{2,6})$/",$email)){
         array_push($errors,"Email eshte jo valide");
     }
     if (empty($name)||!preg_match("/^[a-zA-Z ]*$/",$name)||strlen($name)<3)  {

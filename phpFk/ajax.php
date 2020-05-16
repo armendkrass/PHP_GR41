@@ -3,7 +3,6 @@ include("db.php");
 if(isset($_POST['done'])){
    $name=mysqli_escape_string($connect,$_POST['username']);
    $comment=mysqli_escape_string($connect,$_POST['comment_text']);
-   //insert
     $query=mysqli_query($connect,"INSERT INTO comments (name, comment) VALUES('{$name}','{$comment}')");
 exit();
 }

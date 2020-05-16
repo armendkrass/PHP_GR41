@@ -1,11 +1,9 @@
 <?php
 $vote = $_REQUEST['vote'];
 
-//merret permbajta e textfile-it
 $filename = "poll_result.txt";
 $content = file($filename);
 
-//vendos permbajtjen ne varg
 $array = explode("||", $content[0]);
 $Fiek = $array[0];
 $Fim = $array[1];
